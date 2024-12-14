@@ -1,0 +1,151 @@
+/* general styling */
+@font-face {
+    font-family: "SanFrancisco";
+    src:
+      url("https://cdn.rawgit.com/AllThingsSmitty/fonts/25983b71/SanFrancisco/sanfranciscodisplay-regular-webfont.woff2") format("woff2"),
+      url("https://cdn.rawgit.com/AllThingsSmitty/fonts/25983b71/SanFrancisco/sanfranciscodisplay-regular-webfont.woff") format("woff");
+  }
+
+body {
+    background-color: #FBF0D9;
+    color: #5F4B32;
+}
+
+.wrapper {
+    width: 800px;
+    margin: auto;
+}
+
+/* text styling */
+
+.text p {
+    font-family: 'IBM Plex Serif', 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    text-indent: 1.5rem;
+    text-align: justify;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.text p:first-of-type {
+    text-indent: 0;
+}
+
+.text p:first-of-type::first-line {
+    font-variant: small-caps;
+}
+
+/* chat styling */
+
+.chat {
+    background-color: #fff;
+    border: 1px solid #e5e5ea;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    margin: 35px auto;
+    max-width: 600px;
+    padding: 0.5rem 1.5rem;
+    height: 400px;
+    overflow: scroll;
+}
+
+.chat p {
+    border-radius: 1.15rem;
+    line-height: 1.25;
+    max-width: 75%;
+    padding: 0.5rem .875rem;
+    text-indent: 0 !important;
+    position: relative;
+    word-wrap: break-word;
+    font-family: "SanFrancisco" !important;
+}
+
+.chat p::first-line {
+    font-variant: none !important;
+}
+
+.chat p::before,
+.chat p::after {
+  bottom: -0.1rem;
+  content: "";
+  height: 1rem;
+  position: absolute;
+}
+
+p.msg-sender {
+    align-self: flex-end;
+    background-color: #248bf5;
+    color: #fff; 
+}
+
+p.msg-sender::before {
+    border-bottom-left-radius: 0.8rem 0.7rem;
+    border-right: 1rem solid #248bf5;
+    right: -0.35rem;
+    transform: translate(0, -0.1rem);
+  }
+  
+  p.msg-sender::after {
+    background-color: #fff;
+    border-bottom-left-radius: 0.5rem;
+    right: -40px;
+    transform:translate(-30px, -2px);
+    width: 10px;
+  }
+  
+  p[class^="msg-"] {
+    margin: 0.5rem 0;
+    width: fit-content;
+  }
+  
+  p.msg-sender ~ p.msg-sender {
+    margin: 0.25rem 0 0;
+  }
+  
+  p.msg-sender ~ p.msg-sender:not(:last-child) {
+    margin: 0.25rem 0 0;
+  }
+  
+  p.msg-sender ~ p.msg-sender:last-child {
+    margin-bottom: 0.5rem;
+  }
+  
+  p.msg-receiver {
+    align-items: flex-start;
+    background-color: #e5e5ea;
+    color: #000;
+  }
+  
+  p.msg-receiver:before {
+    border-bottom-right-radius: 0.8rem 0.7rem;
+    border-left: 1rem solid #e5e5ea;
+    left: -0.35rem;
+    transform: translate(0, -0.1rem);
+  }
+  
+  p.msg-receiver::after {
+    background-color: #fff;
+    border-bottom-right-radius: 0.5rem;
+    left: 20px;
+    transform: translate(-30px, -2px);
+    width: 10px;
+  }
+  
+  p[class^="msg-"].emoji {
+    background: none;
+    font-size: 2.5rem;
+  }
+  
+  p[class^="msg-"].emoji::before {
+    content: none;
+  }
+  
+  .no-tail::before {
+    display: none;
+  }
+
+  .margin-b_none {
+    margin-bottom: 0 !important;
+  }
