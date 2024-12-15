@@ -57,6 +57,7 @@ body {
     max-width: 75%;
     padding: 0.5rem .875rem;
     text-indent: 0 !important;
+    text-align: left !important;
     position: relative;
     word-wrap: break-word;
     font-family: "SanFrancisco" !important;
@@ -148,4 +149,15 @@ p.msg-sender::before {
 
   .margin-b_none {
     margin-bottom: 0 !important;
+  }
+
+  @media (max-width: 900px) {
+    .wrapper {
+        width: 95%;
+    }
+    
+    .chat {
+        overflow: visible;
+        height: auto;
+    }
   }
